@@ -16,7 +16,7 @@ jobs:
       - name: Publish to Docker Hub
         uses: actions/hello-world-docker-action@v2
         with:
-          username: ${{DOCKERHUB_USERNAME}}
-          password: ${{DOCKERHUB_PASSWORD}}
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_PASSWORD}}
           repository: jianlianggao/hello-world-docker-action
           tags: latest
