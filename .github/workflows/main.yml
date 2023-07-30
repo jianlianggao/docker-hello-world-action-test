@@ -13,3 +13,10 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Publish to Docker Hub
+        uses: actions/hello-world-docker-action@v2
+        with:
+          username: ${{DOCKERHUB_USERNAME}}
+          password: ${{DOCKERHUB_PASSWORD}}
+          repository: jianlianggao/hello-world-docker-action
+          tags: latest
